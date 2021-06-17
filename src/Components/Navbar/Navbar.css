@@ -1,0 +1,15 @@
+.App-header{
+    border: black solid 1px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item{
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+}
+

@@ -1,0 +1,16 @@
+
+.home-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#home-text{
+    justify-content: space-evenly;
+}
+
+#tweet-photo{
+    width: 100%;
+}
