@@ -1,6 +1,8 @@
 import React from 'react';
 import Home from './Pages/Home/Home.js';
+import SearchPage from './Pages/SearchPage/SearchPage.js';
 import Navbar from './Components/Navbar/Navbar.js';
+
 import './App.css';
 
 function App() {
@@ -8,7 +10,8 @@ function App() {
     <div className="App">
       <div className="container">
         <Navbar />
-        <Home />
+        {/* <Home /> */}
+        <SearchPage />
       </div>
     </div>
   );
