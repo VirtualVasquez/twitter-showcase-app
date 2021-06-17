@@ -1,0 +1,20 @@
+.profile-photo{
+    width:15%;
+    height: 100%;
+    margin: 2% 0 0 2%;
+    border-radius: 50%;
+}
+
+.tweet > .card{
+    display:flex;
+    flex-direction: row;
+    font-size: 0.8em;
+}
+
+.tweet-header{
+    display: flex;
+    flex-direction: row;
+}
+.card-title{
+    font-size: 1em;
+}
