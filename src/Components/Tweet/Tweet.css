@@ -1,7 +1,7 @@
 .profile-photo{
-    width:15%;
+    width:10%;
     height: 100%;
-    margin: 2% 0 0 2%;
+    margin: 5% 0 0 2%;
     border-radius: 50%;
 }
 
@@ -17,4 +17,14 @@
 }
 .card-title{
     font-size: 1em;
+}
+
+.tweet{
+    margin: 0 0 2% 0;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

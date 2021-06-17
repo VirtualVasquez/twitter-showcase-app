@@ -7,9 +7,7 @@ function Tweet() {
         <div className="col-md-6 tweet">
             <div className="card">
                 
-                {/* <div className="profile-photo-div"> */}
                     <img src={ProfilePic} className="profile-photo" alt="profile"/>
-                {/* </div> */}
                 
                 <div className="card-body">
 
@@ -18,12 +16,30 @@ function Tweet() {
                         <h6 className=" mb-2 text-muted">Card subtitle - 1d</h6>
                     </div>
 
-                        <p className="card-text">Some quick example text to .</p>
+                        <p className="card-text">Lorem ipsum dolor sit amet et Lorem ipsum dolor sit amet et</p>
                     
-                    <div className="buttons">
-                    <span class="material-icons">
-                        home
-                    </span>
+                    <div className="icons">
+                        <span class="material-icons">
+                        chat_bubble_outline
+                        </span>
+                        <p className="num-comments">
+                            1
+                        </p>                        
+                        <span class="material-icons">
+                        autorenew
+                        </span>
+                        <p className="num-retweet">
+                            1
+                        </p>  
+                        <span class="material-icons">
+                        favorite_border
+                        </span>
+                        <p className="num-likes">
+                            1
+                        </p>  
+                        <span class="material-icons">
+                        ios_share
+                        </span>
                     </div>
                 </div>
 
