@@ -1,6 +1,6 @@
 import React from 'react';
 import User from '../../Components/User/User.js';
-import Tweet from '../../Components/Tweet/Tweet';
+import BigTweet from '../../Components/BigTweet/BigTweet';
 
 
 import './RandomPage.css';
@@ -20,7 +20,7 @@ function RandomPage() {
                     <User />
                 </div>
                 <div className="col-md-8" id="random-tweet-holder">
-                    <Tweet />
+                    <BigTweet />
                 </div>
             </div>
             

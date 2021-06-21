@@ -1,0 +1,14 @@
+.big-tweet{
+    display: flex;
+    flex-direction: row;
+}
+
+.big-tweet > .card-photo{
+    width: 25%;
+}
+
+.big-tweet > .card-photo > .profile-photo{
+    width: 100%;
+    border-radius:50%;
+    margin: 0.5em 0 0 0.5em;
+}

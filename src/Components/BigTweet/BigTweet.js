@@ -1,12 +1,11 @@
 import React from 'react';
-import './Tweet.css';
+import './BigTweet.css';
 import ProfilePic from "../../Images/placeholder.jpg";
 
-function Tweet() {
+function BigTweet() {
     return (
-        <div className="col-md-6 tweet">
-            <div className="card">
-
+            <div className="card big-tweet">
+                
                 <div className="card-photo">
                     <img src={ProfilePic} className="profile-photo" alt="profile"/>
                 </div>
@@ -46,8 +45,7 @@ function Tweet() {
                 </div>
 
             </div>
-        </div>
     )
   }
 
-export default Tweet;
+export default BigTweet;
