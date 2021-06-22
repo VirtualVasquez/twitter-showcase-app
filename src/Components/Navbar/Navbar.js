@@ -5,14 +5,14 @@ function Navbar() {
     return (
         <header className="App-header">
             <div className="row">
-                <div className="col-2">
+                <div className="col-md-2">
                     <ul className="nav">
                         <li className="nav-item">
                             <a className="nav-link" href="#"><strong>T</strong></a>
                         </li>
                     </ul>
                 </div>
-                <div className="col-10">
+                <div className="col-md-10">
                     <ul className="nav justify-content-end">
                         <li className="nav-item ">
                             <a className="nav-link active" aria-current="page" href="#"> Home</a>

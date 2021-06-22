@@ -14,3 +14,7 @@
 #tweet-photo{
     width: 100%;
 }
+#home-page-row{
+    display: flex;
+    flex-direction: row-reverse;
+}

@@ -5,11 +5,9 @@ import tweetPhoto from "../../Images/tweet-tweet.jpg";
 function Home() {
     return (
       <div className="container">
-        <div className="row page-row">
-          <div className="col-6 home-col">
-            <img src={tweetPhoto} id="tweet-photo" alt="tweet-tweet"/>
-          </div>
-          <div className="col-6 home-col" id="home-text">
+        <div className="row page-row" id="home-page-row">
+         
+          <div className="col-md-6 home-col" id="home-text">
             
             <div>
               <h1>
@@ -33,6 +31,9 @@ function Home() {
               <br></br>
             </div>
 
+          </div>
+          <div className="col-md-6 home-col">
+            <img src={tweetPhoto} id="tweet-photo" alt="tweet-tweet"/>
           </div>
         </div>
 

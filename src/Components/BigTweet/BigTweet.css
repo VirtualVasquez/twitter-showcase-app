@@ -1,3 +1,12 @@
+.jumbotron{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
 .big-tweet{
     display: flex;
     flex-direction: row;
@@ -6,7 +15,9 @@
 .big-tweet > .card-photo{
     width: 25%;
 }
-
+.big-tweet > .card-body{
+    width: 75%;
+}
 .big-tweet > .card-photo > .profile-photo{
     width: 100%;
     border-radius:50%;

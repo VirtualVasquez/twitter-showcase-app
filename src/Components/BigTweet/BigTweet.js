@@ -4,6 +4,8 @@ import ProfilePic from "../../Images/placeholder.jpg";
 
 function BigTweet() {
     return (
+        <div className="jumbotron">
+
             <div className="card big-tweet">
                 
                 <div className="card-photo">
@@ -45,6 +47,8 @@ function BigTweet() {
                 </div>
 
             </div>
+            </div>
+
     )
   }
 

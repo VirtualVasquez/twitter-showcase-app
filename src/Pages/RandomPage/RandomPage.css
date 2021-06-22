@@ -1,3 +1,28 @@
 #random-blerb{
     justify-content: center;
+    text-align: center;
 }
+
+#big-tweet-holder{
+    display: flex;
+    direction: column;
+    align-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    #five-users-holder > .row{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    #five-users-holder > .row > .user{
+        width: 50%;
+        margin: 0;
+        font-size: 0.7em;
+    }
+    #five-users-holder > .row > .user > .card-body{
+        width: 90%;
+        margin: 0;
+    }
+  }
