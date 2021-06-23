@@ -1,5 +1,8 @@
 import React from 'react';
 import './Navbar.css';
+import TwitterLogo from "../../Images/twitter-logo.png";
+
+
 import {
     Link
 } from "react-router-dom";
@@ -8,41 +11,53 @@ import {
 
 function Navbar() {
     return (
-        <header className="App-header">
-            <div className="row">
-                <div className="col-md-2">
+        <header className="app-header">
+                    <div id="logo-holder">
                     <ul className="nav">
-                        <li className="nav-item">
-                            <a className="nav-link" href="#"><strong>T</strong></a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="col-md-10">
-                    <ul className="nav justify-content-end">
+                    <Link to="/">
                         <li className="nav-item">
                             <a 
-                            className="nav-link active" aria-current="page" 
-                            href="#"> 
-                                <Link to="/">Home</Link>
+                                className="nav-link"
+                                href="#">
+                                    <strong>T</strong>
                             </a>
                         </li>
+                        </Link>
+                    </ul>
+                    </div>
+                    <div id="the-rest">
+                    <ul className="nav">
+                        
+                        <Link to="/">
+                        <li className="nav-item">
+                            <a 
+                            className="nav-link"
+                            href="#"> 
+                                Home
+                            </a>
+                        </li>
+                        </Link>
+                        <Link to="/search">
                         <li className="nav-item" >
                             <a 
                                 className="nav-link" 
                                 href="#">
-                                    <Link to="/search">Search</Link> 
+                                    Search
                             </a>
                         </li>
+                        </Link>
+                        <Link to="/random">
                         <li className="nav-item">
                             <a 
                                 className="nav-link" 
                                 href="#">
-                                    <Link to="/random">Random</Link>
+                                    Random
                             </a>
                         </li>
+                        </Link>
                     </ul>
-                </div>
-            </div>
+                    </div>
+
         </header>
     );
   }

@@ -1,3 +1,7 @@
+.app > .container{
+    border: solid 1px #E1E8ED;
+    height: 100vh;
+}
 body{
     font-size: 1.3em;
 }

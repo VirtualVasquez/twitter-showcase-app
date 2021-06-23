@@ -1,15 +1,28 @@
-.App-header{
-    border: black solid 1px;
+.app-header{
+    color:#1DA1F2;
+    background-color: white;
 }
 
-.nav{
-    display: flex;
-    justify-content: space-between;
+.app-header > div{
+    display: inline-block;
 }
-
-.nav-item{
-    display: flex;
+#logo-holder{
+    width: 10%;
+}
+#the-rest{
+    width: 90%;
+}
+#the-rest > .nav{
+    display:flex;
     flex-direction: row;
-    vertical-align: middle;
+    justify-content: flex-end;
 }
+a{
+    border-radius: 50%;
+}
+
+.nav-item > .nav-link:hover{
+    background-color:#a5cde663 ;
+}
+
 

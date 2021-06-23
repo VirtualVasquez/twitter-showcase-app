@@ -7,21 +7,11 @@ function Search() {
         <div className="container">
             <div className="row">
                 <div class="input-group mb-3 col-md-8 offset-md-2" id="search-form">
-                    <div class="input-group-prepend">
-                        <button 
-                            id="search-button"
-                            class="btn btn-outline-secondary" 
-                            type="button">
-                                Button
-                        </button>
-                    </div>
                     <input 
                         type="text" 
                         id="search-bar"
                         class="form-control" 
-                        placeholder="" 
-                        aria-label="" 
-                        aria-describedby="basic-addon1"
+                        placeholder="Search Twitter" 
                     />
                 </div>
             </div>
