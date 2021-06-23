@@ -1,5 +1,10 @@
 import React from 'react';
 import './Navbar.css';
+import {
+    Link
+} from "react-router-dom";
+  
+  
 
 function Navbar() {
     return (
@@ -14,14 +19,26 @@ function Navbar() {
                 </div>
                 <div className="col-md-10">
                     <ul className="nav justify-content-end">
-                        <li className="nav-item ">
-                            <a className="nav-link active" aria-current="page" href="#"> Home</a>
+                        <li className="nav-item">
+                            <a 
+                            className="nav-link active" aria-current="page" 
+                            href="#"> 
+                                <Link to="/">Home</Link>
+                            </a>
+                        </li>
+                        <li className="nav-item" >
+                            <a 
+                                className="nav-link" 
+                                href="#">
+                                    <Link to="/search">Search</Link> 
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">User Search</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Random Tweets</a>
+                            <a 
+                                className="nav-link" 
+                                href="#">
+                                    <Link to="/random">Random</Link>
+                            </a>
                         </li>
                     </ul>
                 </div>
