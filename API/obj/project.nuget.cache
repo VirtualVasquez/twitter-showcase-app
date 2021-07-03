@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1AfrKL08HwjdFIv9iKwGUXhWIABiJpx1sNK5iF8MFZA/DAGbBSXhfwO1Kicc7NMsioEsQyF+Qr8HXKFpOLnT3A==",
+  "dgSpecHash": "iLeO3lbwRCefF35yfolxXdoKzlplluy0CEu3dm4iXea0J/UTAQbJWuzOlliqATVElTe8cIl7tqjcuPDTowCrEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mvasq\\.nuget\\packages\\microsoft.aspnetcore.nodeservices\\3.1.3\\microsoft.aspnetcore.nodeservices.3.1.3.nupkg.sha512",
     "C:\\Users\\mvasq\\.nuget\\packages\\microsoft.aspnetcore.spaservices\\3.1.3\\microsoft.aspnetcore.spaservices.3.1.3.nupkg.sha512",

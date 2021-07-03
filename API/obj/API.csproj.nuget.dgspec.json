@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj": {}
+    "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj": {
+    "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj",
+        "projectPath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj",
         "packagesPath": "C:\\Users\\mvasq\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\obj\\",
+        "outputPath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mvasq\\AppData\\Roaming\\NuGet\\NuGet.Config",
