@@ -46,12 +46,12 @@ namespace API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            if (env.IsDevelopment())
+            /*if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
-            }
+            }*/
 
             app.UseHttpsRedirection();
 
@@ -66,14 +66,14 @@ namespace API
                 endpoints.MapControllers();
             });
 
-            /*app.UseSpa(configuration: spa =>
+            app.UseSpa(configuration: spa =>
             {
                 spa.Options.SourcePath = "client";
                 if (env.IsDevelopment())
                 {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
-            });*/
+            });
         }
     }
 }

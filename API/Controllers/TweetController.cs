@@ -29,13 +29,16 @@ namespace API.Controllers
             var rng = new Random();
             return Enumerable.Range(1, 10).Select(index => new Tweet
             {
-                Date = DateTime.Now.AddDays(index),
-                Username = "FakeName101",
-                TwitterHandle = "@FakeName101_01",
-                TweetMessage = FakeTweets[rng.Next(FakeTweets.Length)],
-                NumberOfLikes = rng.Next(),
-                NumberOfReplies = rng.Next(),
-                NumberOfRetweets = rng.Next(),
+                created_at = DateTime.Now.AddDays(index),
+                name = "FakeName101",
+                username = "@FakeName101_01",
+                text = FakeTweets[rng.Next(FakeTweets.Length)],
+                like_count = rng.Next(),
+                reply_count = rng.Next(),
+                retweet_count = rng.Next(),
+                id = rng.Next(),
+                author_id = rng.Next(),
+
             })
             .ToArray();
         }

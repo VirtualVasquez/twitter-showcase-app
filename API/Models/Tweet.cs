@@ -4,18 +4,22 @@ namespace API
 {
     public class Tweet
     {
-        public DateTime Date { get; set; }
+        public DateTime created_at { get; set; }
 
-        public String Username { get; set; }
+        public String name { get; set; }
 
-        public String TwitterHandle { get; set; }
+        public String username { get; set; }//twitterhandle
         
-        public String TweetMessage { get; set; }
+        public String text { get; set; }
 
-        public int NumberOfReplies { get; set; }
+        public int reply_count { get; set; }
 
-        public int NumberOfRetweets { get; set; }
+        public int retweet_count { get; set; }
 
-        public int NumberOfLikes { get; set; }
+        public int like_count { get; set; }
+        
+        public int id { get; set; }
+
+        public int author_id { get; set; }
     }
 }
