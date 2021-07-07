@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Web.Http.Cors;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableCors(origins: "https://localhost:3000/search", headers: "*", methods: "*")]
     public class TweetController : ControllerBase
     {
         private static readonly string[] FakeTweets = new[]

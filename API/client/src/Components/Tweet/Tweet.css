@@ -6,11 +6,16 @@
     background-color: #F5F8FA;
 }
 
-
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+}
 
 
 .tweet > .card > .card-photo{
-    width:25%;
+    width:10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,6 +59,8 @@
     justify-content: space-between;
     color: #AAB8C2;
 }
+
+
 
 .reply:hover, .share:hover{
     color: #1DA1F2;

@@ -2,9 +2,9 @@ import React from 'react';
 import './Tweet.css';
 import ProfilePic from "../../Images/placeholder.jpg";
 
-function Tweet() {
+const Tweet = props => {
     return (
-        <div className="col-md-6 tweet">
+        <div className="col-md-12 tweet">
             <div className="card">
 
                 <div className="card-photo">
@@ -14,11 +14,11 @@ function Tweet() {
                 <div className="card-body">
 
                     <div className="tweet-header">
-                        <h5 className="card-title name">Card title</h5>
-                        <h6 className=" mb-2 text-muted handle">&nbsp; Card subtitle - 1d</h6>
+                        <h5 className="card-title name">{props.name}</h5>
+                        <h6 className=" mb-2 text-muted handle">&nbsp; {props.username}</h6>
                     </div>
 
-                        <p className="card-text">Lorem ipsum dolor sit amet et Lorem ipsum dolor sit amet et</p>
+                    <p className="card-text">{props.text}</p>
                     
                     <div className="icons">
                         <span className="span-row reply">
@@ -26,7 +26,7 @@ function Tweet() {
                             chat_bubble_outline
                             </span>
                             <p className="num-replies">
-                                1
+                                {Math.floor(props.reply_count/1000000) + "k"}
                             </p>  
                         </span>
                         <span className="span-row retweet">
@@ -34,7 +34,7 @@ function Tweet() {
                             autorenew
                             </span>
                             <p className="num-retweet">
-                                1
+                                {Math.floor(props.retweet_count/1000000) + "K"}
                             </p>  
                         </span>
                         <span className="span-row likes">
@@ -42,7 +42,7 @@ function Tweet() {
                             favorite_border
                             </span>
                             <p className="num-likes">
-                                1
+                                {Math.floor(props.like_count/1000000) + "K"}
                             </p>  
                         </span>
                         <span className="span-row share">

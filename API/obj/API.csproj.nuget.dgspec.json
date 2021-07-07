@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj": {}
+    "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj": {
+    "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\API.csproj",
+        "projectPath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\API.csproj",
         "packagesPath": "C:\\Users\\mvasq\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\API\\obj\\",
+        "outputPath": "C:\\Users\\mvasq\\OneDrive\\Desktop\\Repositories\\twitter-showcase-app\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mvasq\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
               "version": "[3.1.3, )"
