@@ -26,7 +26,7 @@ const Tweet = props => {
                             chat_bubble_outline
                             </span>
                             <p className="num-replies">
-                                {Math.floor(props.reply_count/1000000) + "k"}
+                                {props.reply_count}
                             </p>  
                         </span>
                         <span className="span-row retweet">
@@ -34,7 +34,7 @@ const Tweet = props => {
                             autorenew
                             </span>
                             <p className="num-retweet">
-                                {Math.floor(props.retweet_count/1000000) + "K"}
+                                {props.retweet_count}
                             </p>  
                         </span>
                         <span className="span-row likes">
@@ -42,7 +42,7 @@ const Tweet = props => {
                             favorite_border
                             </span>
                             <p className="num-likes">
-                                {Math.floor(props.like_count/1000000) + "K"}
+                                {props.like_count}
                             </p>  
                         </span>
                         <span className="span-row share">

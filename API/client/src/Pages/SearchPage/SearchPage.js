@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import Search from '../../Components/Search/Search.js';
 import Tweet from '../../Components/Tweet/Tweet.js';
 import User from '../../Components/User/User.js';
+
 
 import './SearchPage.css';
 
@@ -15,18 +17,14 @@ class SearchPage extends Component{
     }
 
     componentDidMount(){
-        const url = 'https://localhost:5001/twwets/GetTweets';
-        
-        fetch(url)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) =>{
-                this.setState({
-                    tweets: data
-                })
-            })
-            .catch((error) => console.log(error));
+        this.populateTweetsData();
+    }
+
+    populateTweetsData(){
+        axios.get("api/Tweets/GetTweets").then(result => {
+            const response = result.data;
+            this.setState({tweets: response});
+        })
     }
 
     renderTweets(){
