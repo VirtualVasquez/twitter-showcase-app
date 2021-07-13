@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Tweets.Data;
+using RestSharp;
+using RestSharp.Authenticators;
 
 namespace Tweets.Controllers
 {

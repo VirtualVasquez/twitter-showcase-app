@@ -1,5 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using RestSharp;
+using RestSharp.Authenticators;
 
 namespace Tweets.Data
 {
@@ -18,18 +23,13 @@ namespace Tweets.Data
                 Data.Tweets.Remove(tweet);
             }
         }
-
+        //GetAllTweets() in reference to dummy data
         public List<Tweet> GetAllTweets() => Data.Tweets.ToList();
-
         public Tweet GetOneRandomTweetByUserId(int author_id)
         {
             throw new System.NotImplementedException();
         }
 
-        public List<Tweet> GetTenTweets()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public Tweet GetTweetByTweetId(int tweet_id) => Data.Tweets.FirstOrDefault(n => n.id == tweet_id);
 
@@ -52,6 +52,22 @@ namespace Tweets.Data
                 oldTweet.id = tweet.id;
                 oldTweet.author_id = tweet.author_id;
             }
+        }
+
+
+
+        public async Task<Tweet> GetTenHardCodedTweets(){
+            var client = new RestClient( "https://api.twitter.com/2/tweets");
+
+            var request = new RestRequest("search/recent?query=megaman&tweet.fields=public_metrics,created_at&expansions=author_id,attachments.media_keys&media.fields=url&user.fields=name,profile_image_url", DataFormat.Json);
+
+            var response = client.Get(request);
+
+            return JsonConvert.DeserializeObject<Tweet>(response)
+
+            // string json;
+            // json = await GetTweetsAsync(url);
+            // return JsonConvert.DeserializeObject<List<Tweet>>(json);
         }
     }
 }

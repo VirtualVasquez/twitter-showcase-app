@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Tweets.Data
 {
@@ -11,5 +12,6 @@ namespace Tweets.Data
         void UpdateTweet(int tweetId, Tweet tweet);
         void DeleteTweet(int tweetId);
         void AddTweet(Tweet tweet);
+        Task<Tweet> GetTenHardCodedTweets();
     }
 }
