@@ -15,7 +15,7 @@ class SearchPage extends Component{
     }
 
     componentDidMount(){
-        const url = 'https://localhost:5001/Tweet';
+        const url = 'https://localhost:5001/twwets/GetTweets';
         
         fetch(url)
             .then((response) => {

@@ -1,6 +1,6 @@
 using System;
 
-namespace API
+namespace Tweets.Data
 {
     public class Tweet
     {
