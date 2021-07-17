@@ -21,7 +21,7 @@ class SearchPage extends Component{
     }
 
     populateTweetsData(){
-        axios.get("api/Tweets/GetTweets").then(result => {
+        axios.get("api/Tweets/GetTenHardCodedTweets").then(result => {
             const response = result.data;
             this.setState({tweets: response});
         })

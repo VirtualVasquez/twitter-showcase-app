@@ -14,10 +14,17 @@ namespace Tweets.Controllers
             this._service = service;
         }
 
+        // [HttpGet("[action]")]
+        // public IActionResult GetTweets()
+        // {
+        //     var allTweets = _service.GetAllTweets();
+        //     return Ok(allTweets);
+        // }
+        
         [HttpGet("[action]")]
-        public IActionResult GetTweets()
+        public IActionResult GetTenHardCodedTweets()
         {
-            var allTweets = _service.GetAllTweets();
+            var allTweets = _service.GetTenHardCodedTweets();
             return Ok(allTweets);
         }
 
