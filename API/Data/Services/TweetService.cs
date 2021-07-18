@@ -10,6 +10,22 @@ namespace Tweets.Data
 {
     public class TweetService : ITweetService
     {
+        
+        // string url = "https://api.twitter.com/2";
+        // string client_id = "lwiEvOdrXU76QrNew4jLRsQ84";
+        // string client_secret = "1eAsiNdwzpIryCr7cb6zlRqb4MKEY9SzX2qyvtodqD5Sr1RORO";
+        // var restclient = new RestClient(url);
+        // RestRequest request = new RestRequest("request/oauth") {Method = Method.POST};
+        // request.AddHeader("Accept", "application/json");
+        // request.AddHeader("Content-Type", "application/x-ww-form-urlencoded");
+        // request.AddParameter("client_id", client_id);
+        // request.AddParameter("client_secret", client_secret);
+        // request.AddParameter("grant_type", "client_credentials");
+        // var tResponse = restclient.Execute(request);
+        // var responseJson = tResponse.Content;
+        // var token = JsonConvert.DeserializeObject<Dictionary<string,object>>(responseJson)["access_token"].ToString();
+        // return token.Length > 0 ? token : null;
+
         public void AddTweet(Tweet tweet)
         {
             Data.Tweets.Add(tweet);
@@ -56,43 +72,19 @@ namespace Tweets.Data
 
 
 
-        // public async Task<Tweet> GetTenHardCodedTweets(){
-        //     var client = new RestClient( "https://api.twitter.com/2/tweets");
+        public async Task<List<Tweet>> GetTenHardCodedTweets(){
 
-
-
-        //     var request = new RestRequest("search/recent?query=megaman&tweet.fields=public_metrics,created_at&expansions=author_id,attachments.media_keys&media.fields=url&user.fields=name,profile_image_url", DataFormat.Json);
-
-        //     client.Authenticator = new HttpBasicAuthenticator("Bearer", "AAAAAAAAAAAAAAAAAAAAAKTwRAEAAAAAsF8lPADSnP0qNJCbVlLcHyO61V8%3DtcHGgFrvq3lnihJmBCvqCCSlgVOQCp5Qx5XGt3GZzhuGorJSnd");
-
-        //     request.AddHeader("Accept", "application/json");
-
+            RestClient client = new RestClient("https://api.twitter.com/2/tweets");
             
+            RestRequest request =  new RestRequest("/search/recent?query=megaman&tweet.fields=public_metrics,created_at&expansions=author_id,attachments.media_keys&media.fields=url&user.fields=name,profile_image_url", DataFormat.Json);
 
-        //     var response = await client.GetAsync<Tweet>(request);
-
-        //     return response;
-
-        //     // string json;
-        //     // json = await GetTweetsAsync(url);
-        //     // return JsonConvert.DeserializeObject<List<Tweet>>(json);
-        // }
-
-        public async Task<Tweet> GetTenHardCodedTweets(){
-
-        RestClient client = new RestClient("https://api.twitter.com/2/tweets");
-        
-        RestRequest request =  new RestRequest("search/recent?query=megaman&tweet.fields=public_metrics,created_at&expansions=author_id,attachments.media_keys&media.fields=url&user.fields=name,profile_image_url", DataFormat.Json);
-
-        request.AddParameter("Authorization", string.Format("Bearer " + "AAAAAAAAAAAAAAAAAAAAAKTwRAEAAAAAsF8lPADSnP0qNJCbVlLcHyO61V8%3DtcHGgFrvq3lnihJmBCvqCCSlgVOQCp5Qx5XGt3GZzhuGorJSnd"), ParameterType.HttpHeader);
-
-        var response = await client.GetAsync<Tweet>(request);
-
-        return response;
-
-            // string json;
-            // json = await GetTweetsAsync(url);
-            // return JsonConvert.DeserializeObject<List<Tweet>>(json);
+            request.AddParameter("Authorization", string.Format("Bearer " + "AAAAAAAAAAAAAAAAAAAAAKTwRAEAAAAAsF8lPADSnP0qNJCbVlLcHyO61V8%3DtcHGgFrvq3lnihJmBCvqCCSlgVOQCp5Qx5XGt3GZzhuGorJSnd"), ParameterType.HttpHeader);
+            
+            // JSON: {"data": [ {}, {} ] }
+            var response = await client.GetAsync<TwitterResponse>(request);
+            
+            return response.data;
         }
+
     }
 }

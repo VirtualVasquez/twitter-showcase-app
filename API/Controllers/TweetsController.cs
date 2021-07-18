@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Tweets.Data;
 using RestSharp;
 using RestSharp.Authenticators;
+using System.Threading.Tasks;
 
 namespace Tweets.Controllers
 {
@@ -13,18 +14,11 @@ namespace Tweets.Controllers
         {
             this._service = service;
         }
-
-        // [HttpGet("[action]")]
-        // public IActionResult GetTweets()
-        // {
-        //     var allTweets = _service.GetAllTweets();
-        //     return Ok(allTweets);
-        // }
         
         [HttpGet("[action]")]
-        public IActionResult GetTenHardCodedTweets()
+        public async Task<IActionResult> GetTenHardCodedTweets()
         {
-            var allTweets = _service.GetTenHardCodedTweets();
+            var allTweets = await _service.GetTenHardCodedTweets();
             return Ok(allTweets);
         }
 

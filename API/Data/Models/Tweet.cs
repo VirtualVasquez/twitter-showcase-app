@@ -1,16 +1,20 @@
 using System;
+using System.Collections.Generic;
 
 namespace Tweets.Data
 {
+    public class TwitterResponse{
+        public List<Tweet> data{  get ; set; }
+    }
     public class Tweet
     {
         public DateTime created_at { get; set; }
 
-        public String name { get; set; }
+        public string name { get; set; }
 
-        public String username { get; set; }//twitterhandle
+        public string username { get; set; }//twitterhandle
         
-        public String text { get; set; }
+        public string text { get; set; }
 
         public int reply_count { get; set; }
 
@@ -18,8 +22,8 @@ namespace Tweets.Data
 
         public int like_count { get; set; }
         
-        public int id { get; set; }
+        public long id { get; set; }
 
-        public int author_id { get; set; }
+        public long author_id { get; set; }
     }
 }
