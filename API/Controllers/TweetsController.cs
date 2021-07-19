@@ -28,29 +28,5 @@ namespace Tweets.Controllers
             var tweet = _service.GetTweetByTweetId(id);
             return Ok(tweet);
         }
-
-        [HttpPost("AddTweet")]
-        public IActionResult AddTweet([FromBody]Tweet tweet)
-        {
-            if(tweet != null)
-            {
-                _service.AddTweet(tweet);
-            }
-            return Ok();
-        }
-
-        [HttpPut("UpdateTweet/{id}")]
-        public IActionResult UpdateTweet(int id, [FromBody]Tweet tweet)
-        {
-            _service.UpdateTweet(id, tweet);
-            return Ok(tweet);
-        }
-        
-        [HttpDelete("DeleteTweet/{id}")]
-        public IActionResult DeleteTweet(int id)
-        {
-            _service.DeleteTweet(id);
-            return Ok();
-        }
     }
 }

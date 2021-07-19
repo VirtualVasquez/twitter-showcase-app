@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace Tweets.Data
 {
     public class TwitterResponse{
-        public List<Tweet> data{  get ; set; }
+        public List<Tweet> data { get ; set; }
+        public List<Tweet> includes { get; set; }
     }
     public class Tweet
     {

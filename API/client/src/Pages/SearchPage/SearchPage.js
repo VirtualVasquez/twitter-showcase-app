@@ -17,15 +17,15 @@ class SearchPage extends Component{
     }
 
     componentDidMount(){
-        this.populateTweetsData();
+        // this.populateTweetsData();
     }
 
-    populateTweetsData(){
-        axios.get("api/Tweets/GetTenHardCodedTweets").then(result => {
-            const response = result.data;
-            this.setState({tweets: response});
-        })
-    }
+    // populateTweetsData(){
+    //     axios.get("api/Tweets/GetTenHardCodedTweets").then(result => {
+    //         const response = result.data;
+    //         this.setState({tweets: response});
+    //     })
+    // }
 
     renderTweets(){
         return this.state.tweets.map((item) => (

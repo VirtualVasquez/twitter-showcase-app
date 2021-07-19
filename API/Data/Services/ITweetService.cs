@@ -6,12 +6,9 @@ namespace Tweets.Data
     public interface ITweetService
     {
         List<Tweet> GetAllTweets();
-        List<Tweet> SearchForTenTweets(string searchQuery);
-        Tweet GetTweetByTweetId(int tweet_id);
         Tweet GetOneRandomTweetByUserId(int author_id);
-        void UpdateTweet(int tweetId, Tweet tweet);
-        void DeleteTweet(int tweetId);
-        void AddTweet(Tweet tweet);
+        Tweet GetTweetByTweetId(int tweet_id);
+        List<Tweet> SearchForTenTweets(string searchQuery);
         Task<List<Tweet>> GetTenHardCodedTweets();
     }
 }
