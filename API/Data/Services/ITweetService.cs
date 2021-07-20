@@ -5,10 +5,10 @@ namespace Tweets.Data
 {
     public interface ITweetService
     {
-        List<Tweet> GetAllTweets();
         Tweet GetOneRandomTweetByUserId(int author_id);
-        Tweet GetTweetByTweetId(int tweet_id);
         List<Tweet> SearchForTenTweets(string searchQuery);
         Task<List<Tweet>> GetTenHardCodedTweets();
+        Task<List<Includes>> GetTenHardCodedUsers();
+        TwitterResponse GetWholeJSON();
     }
 }

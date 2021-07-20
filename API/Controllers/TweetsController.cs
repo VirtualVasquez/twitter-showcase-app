@@ -14,7 +14,7 @@ namespace Tweets.Controllers
         {
             this._service = service;
         }
-        
+
         [HttpGet("[action]")]
         public async Task<IActionResult> GetTenHardCodedTweets()
         {
@@ -22,11 +22,18 @@ namespace Tweets.Controllers
             return Ok(allTweets);
         }
 
-        [HttpGet("SingleTweet/{id}")]
-        public IActionResult GetTweetById(int id)
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetTenHardCodedUsers()
         {
-            var tweet = _service.GetTweetByTweetId(id);
-            return Ok(tweet);
+            var allUsers = await _service.GetTenHardCodedUsers();
+            return Ok(allUsers);
         }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetWholeJSON()
+        {
+            var JSON = await _service.GetWholeJSON();
+            return Ok(JSON);
+        }
+
     }
 }

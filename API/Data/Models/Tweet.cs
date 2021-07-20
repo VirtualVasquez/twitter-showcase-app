@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Tweets.Data
 {
-    public class TwitterResponse{
-        public List<Tweet> data { get ; set; }
-        public List<Tweet> includes { get; set; }
+    public class TwitterResponse {
+        public List<Tweet> data { get; set; }
+        public List<Includes> includes { get; set; }
     }
     public class Tweet
     {
@@ -26,5 +26,20 @@ namespace Tweets.Data
         public long id { get; set; }
 
         public long author_id { get; set; }
+
     }
+
+    public class Includes
+    {
+        public List<TwitterUsers> users { get; set; }
+    }
+
+    public class TwitterUsers
+    {
+        public string name { get; set; }
+        public string profile_image_url { get; set; }
+        public string username { get; set; }
+        public long id { get; set; }
+    }
+
 }
