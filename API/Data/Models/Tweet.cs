@@ -13,14 +13,14 @@ namespace Tweets.Data
         public long author_id { get; set; }
         public List<Public_Metrics> public_metrics { get; set; }
         public string text { get; set; }
-
+        public string name { get; set; }
+        public string profile_image_url { get; set; }
+        public string username { get; set; }
     }
-
     public class Includes
     {
         public List<TwitterUsers> users { get; set; }
     }
-
     public class TwitterUsers
     {
         public string name { get; set; }
