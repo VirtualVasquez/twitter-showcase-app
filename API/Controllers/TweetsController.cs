@@ -29,6 +29,14 @@ namespace Tweets.Controllers
             return Ok(allUsers);
         }
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetJSON()
+        {
+            var JSON = await _service.GetJSON();
+            return Ok(JSON);
+        }
+
+
 
     }
 }
