@@ -9,23 +9,10 @@ namespace Tweets.Data
     }
     public class Tweet
     {
-        public DateTime created_at { get; set; }
-
-        public string name { get; set; }
-
-        public string username { get; set; }//twitterhandle
-        
-        public string text { get; set; }
-
-        public int reply_count { get; set; }
-
-        public int retweet_count { get; set; }
-
-        public int like_count { get; set; }
-        
         public long id { get; set; }
-
         public long author_id { get; set; }
+        public List<Public_Metrics> public_metrics { get; set; }
+        public string text { get; set; }
 
     }
 
@@ -41,5 +28,10 @@ namespace Tweets.Data
         public string username { get; set; }
         public long id { get; set; }
     }
-
+    public class Public_Metrics
+    {
+        public long retweet_count { get; set; }
+        public long reply_count { get; set; }
+        public long like_count { get; set; }
+    }
 }

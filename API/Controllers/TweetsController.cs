@@ -28,12 +28,7 @@ namespace Tweets.Controllers
             var allUsers = await _service.GetTenHardCodedUsers();
             return Ok(allUsers);
         }
-        [HttpGet("[action]")]
-        public async Task<IActionResult> GetWholeJSON()
-        {
-            var JSON = await _service.GetWholeJSON();
-            return Ok(JSON);
-        }
+
 
     }
 }

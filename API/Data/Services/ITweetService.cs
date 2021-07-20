@@ -9,6 +9,6 @@ namespace Tweets.Data
         List<Tweet> SearchForTenTweets(string searchQuery);
         Task<List<Tweet>> GetTenHardCodedTweets();
         Task<List<Includes>> GetTenHardCodedUsers();
-        TwitterResponse GetWholeJSON();
+
     }
 }
