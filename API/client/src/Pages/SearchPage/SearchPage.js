@@ -17,27 +17,29 @@ class SearchPage extends Component{
     }
 
     componentDidMount(){
-        // this.populateTweetsData();
+         this.populateTweetsData();
     }
 
-    // populateTweetsData(){
-    //     axios.get("api/Tweets/GetTenHardCodedTweets").then(result => {
-    //         const response = result.data;
-    //         this.setState({tweets: response});
-    //     })
-    // }
+     populateTweetsData(){
+         axios.get("api/Tweets/GetTenHardCodedTweets").then(result => {
+             const response = result.data;
+             this.setState({tweets: response});
+         })
+         console.log(this.state.tweets)
+     }
 
     renderTweets(){
         return this.state.tweets.map((item) => (
             <Tweet 
                 key={item.id}
                 created_at={item.created_at}
+                profile_image_url={item.profile_image_url}
                 name={item.name}
                 username={item.username}
                 text={item.text}
-                reply_count={item.reply_count}
-                retweet_count={item.retweet_count}
-                like_count= {item.like_count}
+                reply_count={item.public_metrics[0].reply_count}
+                retweet_count={item.public_metrics[0].retweet_count}
+                like_count={item.public_metrics[0].like_count}
             />
         ))
     }

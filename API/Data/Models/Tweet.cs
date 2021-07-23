@@ -12,6 +12,7 @@ namespace Tweets.Data
         public long id { get; set; }
         public long author_id { get; set; }
         public List<Public_Metrics> public_metrics { get; set; }
+        public DateTime created_at { get; set; }
         public string text { get; set; }
         public string name { get; set; }
         public string profile_image_url { get; set; }

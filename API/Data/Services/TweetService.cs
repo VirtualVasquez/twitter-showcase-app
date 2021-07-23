@@ -56,6 +56,10 @@ namespace Tweets.Data
             // JSON: {"data": [ {}, {} ] }
             var response = await client.GetAsync<TwitterResponse>(request);
 
+            foreach (var tweet in response.data)
+            {
+            }
+
             for (int i = 0; i < 10; i++)
             {
                 response.data[i].name = response.includes[0].users[i].name;
