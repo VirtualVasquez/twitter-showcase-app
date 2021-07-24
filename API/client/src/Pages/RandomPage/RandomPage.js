@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import User from '../../Components/User/User.js';
 import BigTweet from '../../Components/BigTweet/BigTweet';
 
 
 import './RandomPage.css';
 
-class RandomPage extends Component {
+class RandomPage extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -41,19 +42,56 @@ class RandomPage extends Component {
                     "username": "insanerainmusic"
                 }
             ],
-            tweets:[],
-        };
-        this.handleClick() = this.handleClick.bind(this);
-        this.getOneUsersTweets() = this.getOneUsersTweets.bind(this);
-
+            tweets: [],
+            oneTweet:[],
+        }
+        this.handleClick = this.handleClick.bind(this);
+        this.getOneUsersTweets = this.getOneUsersTweets.bind(this);
     }
-    getOneUsersTweets() {
-        if (this.state.user_query) {
-            axios.get(`api/Tweets/GetTenUserQueriedTweets/${this.state.user_query}`).then(result => {
-                const response = result.data;
-                this.setState({ tweets: response });
-            })
-            console.log(this.state.tweets)
+    componentDidMount() {
+        window.addEventListener('click', this.handleClick);
+    }
+
+    handleClick = (e) => {
+        switch (e.target.id) {
+            case "1308380759745597440":
+            case "19609162":
+            case "431947388":
+            case "403614288":
+            case "1450537070":
+                this.getOneUsersTweets(e.target.id);
+                break;
+        }
+    }
+
+    getOneUsersTweets(id) {
+        axios.get(`api/tweets/GetOneAuthorsTweets/${id}`).then(result => {
+            const response = result.data;
+            var randomIndex = Math.floor(Math.random() * 11);
+            this.setState({
+                tweets: response,
+                oneTweet: response[randomIndex]
+            });
+            console.log(this.state.oneTweet);
+
+        })
+    }
+
+    renderOneTweet() {
+        if (this.state.oneTweet.length > 0) {
+            return this.state.oneTweet.map((item) => (
+                    < BigTweet
+                        key={item.id}
+                        created_at={item.created_at}
+                        profile_image_url={item.profile_image_url}
+                        name={item.name}
+                        username={item.username}
+                        text={item.text}
+                        reply_count={item.public_metrics[0].reply_count}
+                        retweet_count={item.public_metrics[0].retweet_count}
+                        like_count={item.public_metrics[0].like_count}
+                    />
+                )) 
         }
     }
 
@@ -70,6 +108,7 @@ class RandomPage extends Component {
                                 this.state.definedUsers.map(function (user, index) {
                                     return (
                                         <User
+                                            key={user.id}
                                             profile_image_url={user.profile_image_url}
                                             name={user.name}
                                             username={user.username}
@@ -79,20 +118,17 @@ class RandomPage extends Component {
 
                                 })
                             }
-
-
                         </div>
-
-
                     </div>
                     <div className="col-md-8 col-sm-12 col-12" id="big-tweet-holder">
-                        <BigTweet />
+                        {
+                          this.renderOneTweet()
+                        }
                     </div>
                 </div>
 
             </div>
         )
     }
-  }
-
+}
 export default RandomPage;

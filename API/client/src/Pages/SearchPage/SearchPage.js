@@ -31,7 +31,6 @@ class SearchPage extends Component{
                 const response = result.data;
                 this.setState({ tweets: response });
             })
-            console.log(this.state.tweets)
         }
      }
 
@@ -51,7 +50,6 @@ class SearchPage extends Component{
         ))
     }
     render(){
-        console.log(this.state.tweets)
         return(
             <div>
             <br></br>
