@@ -2,7 +2,7 @@ import React from 'react';
 import './BigTweet.css';
 import ProfilePic from "../../Images/placeholder.jpg";
 
-function BigTweet() {
+const BigTweet = props => {
     return (
         <div className="jumbotron">
 

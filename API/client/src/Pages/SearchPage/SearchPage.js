@@ -19,10 +19,6 @@ class SearchPage extends Component{
         this.populateTweetsData = this.populateTweetsData.bind(this);
     }
 
-    //componentDidMount(){
-    //     this.populateTweetsData();
-    //}
-
     handleChange(event) {
         this.setState({
             user_query: event.target.value

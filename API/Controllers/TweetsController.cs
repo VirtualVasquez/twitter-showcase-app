@@ -29,6 +29,13 @@ namespace Tweets.Controllers
             return Ok(allTweets);
         }
 
+        [HttpGet("[action]/{author_id}")]
+        public async Task<IActionResult> GetOneAuthorsTweets(string author_id)
+        {
+            var allTweets = await _service.GetOneAuthorsTweets(author_id);
+            return Ok(allTweets);
+        }
+
         [HttpGet("[action]")]
         public async Task<IActionResult> GetTenHardCodedUsers()
         {
