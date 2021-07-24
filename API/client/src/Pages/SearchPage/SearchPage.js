@@ -12,20 +12,31 @@ class SearchPage extends Component{
     constructor(props){
         super(props);
         this.state = {
+            user_query:"",
             tweets:[],
         };
+        this.handleChange = this.handleChange.bind(this);
+        this.populateTweetsData = this.populateTweetsData.bind(this);
     }
 
-    componentDidMount(){
-         this.populateTweetsData();
+    //componentDidMount(){
+    //     this.populateTweetsData();
+    //}
+
+    handleChange(event) {
+        this.setState({
+            user_query: event.target.value
+        })
     }
 
-     populateTweetsData(){
-         axios.get("api/Tweets/GetTenHardCodedTweets").then(result => {
-             const response = result.data;
-             this.setState({tweets: response});
-         })
-         console.log(this.state.tweets)
+    populateTweetsData() {
+        if (this.state.user_query) {
+            axios.get(`api/Tweets/GetTenUserQueriedTweets/${this.state.user_query}`).then(result => {
+                const response = result.data;
+                this.setState({ tweets: response });
+            })
+            console.log(this.state.tweets)
+        }
      }
 
     renderTweets(){
@@ -48,7 +59,10 @@ class SearchPage extends Component{
         return(
             <div>
             <br></br>
-            <Search />
+                <Search
+                    populateTweetsData={this.populateTweetsData}
+                    handleChange={this.handleChange}
+                />
             <br></br>
             <div className="container">
                 <div className="row">
