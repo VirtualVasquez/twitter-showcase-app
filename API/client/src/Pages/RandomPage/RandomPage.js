@@ -43,7 +43,7 @@ class RandomPage extends Component{
                 }
             ],
             tweets: [],
-            oneTweet:[],
+            oneTweet:null,
         }
         this.handleClick = this.handleClick.bind(this);
         this.getOneUsersTweets = this.getOneUsersTweets.bind(this);
@@ -71,27 +71,26 @@ class RandomPage extends Component{
             this.setState({
                 tweets: response,
                 oneTweet: response[randomIndex]
-            });
-            console.log(this.state.oneTweet);
+            }, () => {console.log(this.state.oneTweet) });
+            ;
 
         })
     }
 
     renderOneTweet() {
-        if (this.state.oneTweet.length > 0) {
-            return this.state.oneTweet.map((item) => (
-                    < BigTweet
-                        key={item.id}
-                        created_at={item.created_at}
-                        profile_image_url={item.profile_image_url}
-                        name={item.name}
-                        username={item.username}
-                        text={item.text}
-                        reply_count={item.public_metrics[0].reply_count}
-                        retweet_count={item.public_metrics[0].retweet_count}
-                        like_count={item.public_metrics[0].like_count}
-                    />
-                )) 
+        if (this.state.oneTweet) {
+            let item = this.state.oneTweet;
+            return (<BigTweet
+                key={item.id}
+                created_at={item.created_at}
+                profile_image_url={item.profile_image_url}
+                name={item.name}
+                username={item.username}
+                text={item.text}
+                reply_count={item.public_metrics[0].reply_count}
+                retweet_count={item.public_metrics[0].retweet_count}
+                like_count={item.public_metrics[0].like_count}
+            />);
         }
     }
 

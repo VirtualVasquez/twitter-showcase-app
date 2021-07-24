@@ -30,7 +30,7 @@ class SearchPage extends Component{
             axios.get(`api/Tweets/GetTenUserQueriedTweets/${this.state.user_query}`).then(result => {
                 const response = result.data;
                 this.setState({ tweets: response });
-            })
+            }).catch(console.log("Not valid"))
         }
      }
 
