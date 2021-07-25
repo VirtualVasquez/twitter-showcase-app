@@ -17,9 +17,6 @@ const Search = props => {
                 </div>
             </div>
             <div className="row">
-                {/*<div className="col-md-4 offset-md-2">*/}
-                {/*    <button className="get-buttons" id="get-usernames">Get Usernames</button>*/}
-                {/*</div>*/}
                 <div className="col-md-4 offset-md-4">
                     <button
                         className="get-buttons"

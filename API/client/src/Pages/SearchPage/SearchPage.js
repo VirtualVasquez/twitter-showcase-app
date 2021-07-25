@@ -13,7 +13,8 @@ class SearchPage extends Component{
         super(props);
         this.state = {
             user_query:"",
-            tweets:[],
+            tweets: [],
+            error: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.populateTweetsData = this.populateTweetsData.bind(this);
@@ -29,10 +30,28 @@ class SearchPage extends Component{
         if (this.state.user_query) {
             axios.get(`api/Tweets/GetTenUserQueriedTweets/${this.state.user_query}`).then(result => {
                 const response = result.data;
-                this.setState({ tweets: response });
-            }).catch(console.log("Not valid"))
+                this.setState({
+                    tweets: response,
+                    error: false
+                });
+            }).catch(() => {
+                this.setState({
+                    tweets: [],
+                    error: true
+                });
+            }                
+            )
         }
-     }
+    }
+
+    tweetsOrError() {
+        if (this.state.tweets.length === 0 && this.state.error) {
+            return this.renderError();
+        }
+        if(!this.state.error){
+            return this.renderTweets()
+        }
+    }
 
     renderTweets(){
         return this.state.tweets.map((item) => (
@@ -49,6 +68,14 @@ class SearchPage extends Component{
             />
         ))
     }
+    renderError() {
+        return (
+            <div className="col-md-6 offset-md-3">
+                <p id="error-message">Sorry, we weren't able to find anything. Please searching something else.</p>
+            </div>
+            )
+
+    }
     render(){
         return(
             <div>
@@ -59,8 +86,8 @@ class SearchPage extends Component{
                 />
             <br></br>
             <div className="container">
-                <div className="row">
-                    {this.renderTweets()}
+                <div className="row" id="tweets-or-error">
+                    {this.tweetsOrError()}
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Navbar.css';
-import TwitterLogo from "../../Images/twitter-logo.png";
 
 
 import {
