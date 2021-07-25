@@ -1,0 +1,81 @@
+.tweet{
+    color:#14171A;
+}
+
+.tweet > .card:hover{
+    background-color: #F5F8FA;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+}
+
+
+.tweet > .card > .card-photo{
+    width:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tweet > .card > .card-photo > .profile-photo{
+    width: 100%;
+    border-radius: 50%;
+}
+.tweet > .card{
+    display:flex;
+    flex-direction: row;
+    font-size: 0.8em;
+    padding: 0 0 0 0.5em;
+
+}
+
+.tweet-header{
+    display: flex;
+    flex-direction: row;
+}
+.card-title{
+    font-size: 1em;
+}
+
+.tweet{
+    margin: 0 0 2% 0;
+}
+.span-row{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    padding: 0.1em 0 0 0;
+    justify-content: space-evenly;
+    align-content: center;
+    border-radius: 50%;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #AAB8C2;
+}
+
+
+
+.reply:hover, .share:hover{
+    color: #1DA1F2;
+    background-color:#a5cde663 ;
+}
+
+.retweet:hover{
+    color: rgb(55, 194, 55);
+    background-color: rgba(159, 194, 159, 0.1);
+}
+.likes:hover{
+    color: rgb(218, 20, 20);
+    background-color: rgba(209, 140, 140, 0.336);
+}
+
+.name:hover{
+    text-decoration: underline;
+}
