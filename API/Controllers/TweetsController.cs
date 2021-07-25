@@ -15,13 +15,6 @@ namespace Tweets.Controllers
             this._service = service;
         }
 
-        [HttpGet("[action]")]
-        public async Task<IActionResult> GetTenHardCodedTweets()
-        {
-            var allTweets = await _service.GetTenHardCodedTweets();
-            return Ok(allTweets);
-        }
-
         [HttpGet("[action]/{user_query}")]
         public async Task<IActionResult> GetTenUserQueriedTweets(string user_query)
         {
@@ -35,22 +28,5 @@ namespace Tweets.Controllers
             var allTweets = await _service.GetOneAuthorsTweets(author_id);
             return Ok(allTweets);
         }
-
-        [HttpGet("[action]")]
-        public async Task<IActionResult> GetTenHardCodedUsers()
-        {
-            var allUsers = await _service.GetTenHardCodedUsers();
-            return Ok(allUsers);
-        }
-
-        [HttpGet("[action]")]
-        public async Task<IActionResult> GetJSON()
-        {
-            var JSON = await _service.GetJSON();
-            return Ok(JSON);
-        }
-
-
-
     }
 }
