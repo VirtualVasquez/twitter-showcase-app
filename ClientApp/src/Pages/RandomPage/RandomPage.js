@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import User from '../../Components/User/User.js';
-import BigTweet from '../../Components/BigTweet/BigTweet';
+import User from '../../components/User/User.js';
+import BigTweet from '../../components/BigTweet/BigTweet';
 
 
 import './RandomPage.css';
