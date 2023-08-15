@@ -29,19 +29,21 @@ const SearchPage = () => {
     };
 
     const renderTweets = () => {
-        return tweets.map((item) => (
-            <Tweet
-                key={item.id}
-                created_at={item.created_at}
-                profile_image_url={item.profile_image_url}
-                name={item.name}
-                username={item.username}
-                text={item.text}
-                reply_count={item.public_metrics[0].reply_count}
-                retweet_count={item.public_metrics[0].retweet_count}
-                like_count={item.public_metrics[0].like_count}
-            />
-        ));
+        if (tweets) {
+            return tweets.map((item) => (
+                <Tweet
+                    key={item.id}
+                    created_at={item.created_at}
+                    profile_image_url={item.profile_image_url}
+                    name={item.name}
+                    username={item.username}
+                    text={item.text}
+                    reply_count={item.public_metrics[0].reply_count}
+                    retweet_count={item.public_metrics[0].retweet_count}
+                    like_count={item.public_metrics[0].like_count}
+                />
+            ));
+        }
     };
 
     const renderError = () => {

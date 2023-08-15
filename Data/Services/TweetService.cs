@@ -25,11 +25,15 @@ namespace Tweets.Data
 
             var response = await client.GetAsync<TwitterResponse>(request);
 
-            for (int i = 0; i < 10; i++)
+            if (response.includes != null && response.includes.Count > 0 && response.includes[0].users != null)
             {
-                response.data[i].name = response.includes[0].users[i].name;
-                response.data[i].profile_image_url = response.includes[0].users[i].profile_image_url;
-                response.data[i].username = response.includes[0].users[i].username;
+                int loopCount = Math.Min(response.includes[0].users.Count, 10);
+                for (int i = 0; i < loopCount; i++)
+                {
+                    response.data[i].name = response.includes[0].users[i].name;
+                    response.data[i].profile_image_url = response.includes[0].users[i].profile_image_url;
+                    response.data[i].username = response.includes[0].users[i].username;
+                }
             }
 
             return response.data;

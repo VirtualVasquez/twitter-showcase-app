@@ -42,16 +42,13 @@ function RandomPage() {
             "username": "insanerainmusic"
         }
     ])
-    //    const [tweets, setTweets] = useState([]); //might not need this at all
     const [oneTweet, setOneTweet] = useState(null);
 
     function getOneUsersTweets(id) {
         axios.get(`api/tweets/GetOneAuthorsTweets/${id}`).then(result => {
             const response = result.data;
             var randomIndex = Math.floor(Math.random() * 11);
-            //setTweets(response); //might not need this at all
             setOneTweet(response[randomIndex]);
-            console.log(oneTweet);
         })
     }
     function renderOneTweet() {
