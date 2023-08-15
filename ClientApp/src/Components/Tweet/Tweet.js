@@ -2,7 +2,6 @@ import React from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import './Tweet.css';
-import ProfilePic from "../../Images/placeholder.jpg";
 
 const Tweet = props => {
     return (

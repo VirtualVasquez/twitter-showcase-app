@@ -1,5 +1,4 @@
 import React from 'react';
-import ProfilePic from "../../Images/placeholder.jpg";
 import './User.css';
 
 const User = props => {

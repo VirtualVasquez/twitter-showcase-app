@@ -2,7 +2,6 @@ import React from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import './BigTweet.css';
-import ProfilePic from "../../Images/placeholder.jpg";
 
 const BigTweet = props => {
     return (

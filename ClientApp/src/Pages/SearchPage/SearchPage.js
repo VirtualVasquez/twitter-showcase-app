@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Search from '../../components/Search/Search.js';
 import Tweet from '../../components/Tweet/Tweet.js';
-import User from '../../components/User/User.js';
 
 
 import './SearchPage.css';
