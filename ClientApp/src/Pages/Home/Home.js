@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import tweetPhoto from "../../Images/tweet-tweet.jpg";
+import tweetX from "../../Images/blue-x.png";
 
 function Home() {
     return (
@@ -11,7 +11,7 @@ function Home() {
             
             <div>
               <h1>
-                Twitter ShowCase App
+                Twitter X ShowCase App
               </h1>
             </div>
 
@@ -33,7 +33,7 @@ function Home() {
 
           </div>
           <div className="col-md-6 home-col">
-            <img src={tweetPhoto} id="tweet-photo" alt="tweet-tweet"/>
+            <img src={tweetX} id="tweet-photo" alt="tweet-tweet"/>
           </div>
         </div>
 

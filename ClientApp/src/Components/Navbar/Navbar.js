@@ -16,7 +16,7 @@ function Navbar() {
                     <Link to="/">
                         <li className="nav-item">
                             <span className="nav-link">
-                                <strong>T</strong>
+                                <strong>X</strong>
                             </span>
                         </li>
                     </Link>
