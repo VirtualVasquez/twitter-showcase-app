@@ -28,7 +28,7 @@ const BigTweet = props => {
                     
                     <div className="icons">
                         <span className="span-row reply">
-                            <span class="material-icons">
+                            <span className="material-icons">
                             chat_bubble_outline
                             </span>
                             <p className="num-replies">
@@ -36,7 +36,7 @@ const BigTweet = props => {
                             </p>    
                         </span>
                         <span className="span-row retweet">
-                            <span class="material-icons">
+                            <span className="material-icons">
                             autorenew
                             </span>
                             <p className="num-retweet">
@@ -44,7 +44,7 @@ const BigTweet = props => {
                             </p>  
                         </span>
                         <span className="span-row likes">
-                            <span class="material-icons">
+                            <span className="material-icons">
                             favorite_border
                             </span>
                             <p className="num-likes">
@@ -52,7 +52,7 @@ const BigTweet = props => {
                             </p> 
                         </span>
                         <span className="span-row share">
-                            <span class="material-icons">
+                            <span className="material-icons">
                             ios_share
                             </span>
                         </span>

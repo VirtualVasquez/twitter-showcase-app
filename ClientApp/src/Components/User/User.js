@@ -4,12 +4,12 @@ import './User.css';
 
 const User = props => {
     return (
-        <div className="card user author" id={props.id}>
+        <div className="card user author" id={props.id} onClick={props.onClick}>
 
             <div className="card-photo" id={props.id}>
-                <img src={props.profile_image_url} className="profile-photo" alt="profile" id={props.id}/>
+                <img src={props.profile_image_url} className="profile-photo" alt="profile" id={props.id} />
             </div>
-                
+
             <div className="card-body" id={props.id}>
 
                 <div className="user-header" id={props.id}>
@@ -21,6 +21,6 @@ const User = props => {
 
         </div>
     )
-  }
+}
 
 export default User;
