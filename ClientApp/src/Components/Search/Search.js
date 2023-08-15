@@ -6,11 +6,11 @@ const Search = props => {
     return (
         <div className="container">
             <div className="row">
-                <div class="input-group mb-3 col-md-8 offset-md-2" id="search-form">
+                <div className="input-group mb-3 col-md-8 offset-md-2" id="search-form">
                     <input 
                         type="text"
                         id="search-bar"
-                        class="form-control"
+                        className="form-control"
                         placeholder="Search Twitter"
                         onChange={props.handleChange}
                     />

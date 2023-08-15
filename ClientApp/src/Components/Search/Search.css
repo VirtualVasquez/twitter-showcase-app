@@ -10,7 +10,7 @@
 #search-form{
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
 }
 #search-button, #search-bar{
     background-color: #E1E8ED;

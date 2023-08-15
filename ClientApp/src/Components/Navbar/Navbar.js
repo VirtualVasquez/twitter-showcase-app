@@ -11,52 +11,43 @@ import {
 function Navbar() {
     return (
         <header className="app-header">
-                    <div id="logo-holder">
-                    <ul className="nav">
+            <div id="logo-holder">
+                <ul className="nav">
                     <Link to="/">
                         <li className="nav-item">
-                            <a 
-                                className="nav-link"
-                                href="#">
-                                    <strong>T</strong>
-                            </a>
+                            <span className="nav-link">
+                                <strong>T</strong>
+                            </span>
                         </li>
-                        </Link>
-                    </ul>
-                    </div>
-                    <div id="the-rest">
-                    <ul className="nav">
-                        
-                        <Link to="/">
-                        <li className="nav-item">
-                            <a 
-                            className="nav-link"
-                            href="#"> 
-                                Home
-                            </a>
-                        </li>
-                        </Link>
-                        <Link to="/search">
-                        <li className="nav-item" >
-                            <a 
-                                className="nav-link" 
-                                href="#">
-                                    Search
-                            </a>
-                        </li>
-                        </Link>
-                        <Link to="/random">
-                        <li className="nav-item">
-                            <a 
-                                className="nav-link" 
-                                href="#">
-                                    Random
-                            </a>
-                        </li>
-                        </Link>
-                    </ul>
-                    </div>
+                    </Link>
+                </ul>
+            </div>
+            <div id="the-rest">
+                <ul className="nav">
 
+                    <Link to="/">
+                        <li className="nav-item">
+                            <span className="nav-link">
+                                Home
+                            </span>
+                        </li>
+                    </Link>
+                    <Link to="/search">
+                        <li className="nav-item" >
+                            <span className="nav-link">
+                                Search
+                            </span>
+                        </li>
+                    </Link>
+                    <Link to="/random">
+                        <li className="nav-item">
+                            <span className="nav-link">
+                                Random
+                            </span>
+                        </li>
+                    </Link>
+                </ul>
+            </div>
         </header>
     );
   }
