@@ -3,36 +3,41 @@ import axios from 'axios';
 import User from '../../components/User/User.js';
 import BigTweet from '../../components/BigTweet/BigTweet';
 import './RandomPage.css';
+import Iroh from "../../Images/iroh.jpg";
+import Sonic from "../../Images/sonic.jpg";
+import Jayz from "../../Images/jtc.jpg";
+import Carlos from "../../Images/iitr.jpg";
+import Linus from "../../Images/ltt.jpg";
 
 function RandomPage() {
     const [definedUsers] = useState([
         {
             "username": "Grand__Lotus",
             "name": "Iroh",
-            "profile_image_url": "https://pbs.twimg.com/profile_images/1308380991329837056/juixbRHf_normal.jpg",
+            "profile_image_url": Iroh,
             "id": "1308380759745597440"
         },
         {
             "username": "sonic_hedgehog",
             "id": "19609162",
-            "profile_image_url": "https://pbs.twimg.com/profile_images/686613263811907584/Ni3AWru__normal.png",
+            "profile_image_url": Sonic,
             "name": "Sonic the Hedgehog"
         },
         {
             "name": "JayzTwoCents",
             "username": "JayzTwoCents",
             "id": "431947388",
-            "profile_image_url": "https://pbs.twimg.com/profile_images/1294090704298192896/TpKq90IJ_normal.jpg"
+            "profile_image_url": Jayz
         },
         {
-            "profile_image_url": "https://pbs.twimg.com/profile_images/1034493707553140736/cDlQGimm_normal.jpg",
+            "profile_image_url": Linus,
             "id": "403614288",
             "username": "LinusTech",
             "name": "Linus Tech Tips"
         },
         {
             "id": "1450537070",
-            "profile_image_url": "https://pbs.twimg.com/profile_images/1347958805217247232/pLGdF0x__normal.jpg",
+            "profile_image_url": Carlos,
             "name": "insaneintherainmusic",
             "username": "insanerainmusic"
         }
