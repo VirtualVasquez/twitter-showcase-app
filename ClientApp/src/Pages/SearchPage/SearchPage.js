@@ -1,60 +1,36 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Search from '../../components/Search/Search.js';
 import Tweet from '../../components/Tweet/Tweet.js';
-
-
 import './SearchPage.css';
 
+const SearchPage = () => {
+    const [userQuery, setUserQuery] = useState("");
+    const [tweets, setTweets] = useState([]);
+    const [error, setError] = useState(false);
 
-class SearchPage extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            user_query:"",
-            tweets: [],
-            error: false
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.populateTweetsData = this.populateTweetsData.bind(this);
-    }
+    const handleChange = (event) => {
+        setUserQuery(event.target.value);
+    };
 
-    handleChange(event) {
-        this.setState({
-            user_query: event.target.value
-        })
-    }
-
-    populateTweetsData() {
-        if (this.state.user_query) {
-            axios.get(`api/Tweets/GetTenUserQueriedTweets/${this.state.user_query}`).then(result => {
-                const response = result.data;
-                this.setState({
-                    tweets: response,
-                    error: false
+    const populateTweetsData = () => {
+        if (userQuery) {
+            axios.get(`api/Tweets/GetTenUserQueriedTweets/${userQuery}`)
+                .then(result => {
+                    const response = result.data;
+                    setTweets(response);
+                    setError(false);
+                })
+                .catch(() => {
+                    setTweets([]);
+                    setError(true);
                 });
-            }).catch(() => {
-                this.setState({
-                    tweets: [],
-                    error: true
-                });
-            }                
-            )
         }
-    }
+    };
 
-    tweetsOrError() {
-        if (this.state.tweets.length === 0 && this.state.error) {
-            return this.renderError();
-        }
-        if(!this.state.error){
-            return this.renderTweets()
-        }
-    }
-
-    renderTweets(){
-        return this.state.tweets.map((item) => (
-            <Tweet 
+    const renderTweets = () => {
+        return tweets.map((item) => (
+            <Tweet
                 key={item.id}
                 created_at={item.created_at}
                 profile_image_url={item.profile_image_url}
@@ -65,34 +41,41 @@ class SearchPage extends Component{
                 retweet_count={item.public_metrics[0].retweet_count}
                 like_count={item.public_metrics[0].like_count}
             />
-        ))
-    }
-    renderError() {
+        ));
+    };
+
+    const renderError = () => {
         return (
             <div className="col-md-6 offset-md-3">
-                <p id="error-message">Sorry, we weren't able to find anything. Please searching something else.</p>
+                <p id="error-message">Sorry, we weren't able to find anything. Please try searching something else.</p>
             </div>
-            )
+        );
+    };
 
-    }
-    render(){
-        return(
-            <div>
-            <br></br>
-                <Search
-                    populateTweetsData={this.populateTweetsData}
-                    handleChange={this.handleChange}
-                />
-            <br></br>
+    const tweetsOrError = () => {
+        if (tweets.length === 0 && error) {
+            return renderError();
+        }
+        if (!error) {
+            return renderTweets();
+        }
+    };
+
+    return (
+        <div>
+            <br />
+            <Search
+                populateTweetsData={populateTweetsData}
+                handleChange={handleChange}
+            />
+            <br />
             <div className="container">
                 <div className="row" id="tweets-or-error">
-                    {this.tweetsOrError()}
+                    {tweetsOrError()}
                 </div>
             </div>
         </div>
-        )
-    }
-}
-
+    );
+};
 
 export default SearchPage;
