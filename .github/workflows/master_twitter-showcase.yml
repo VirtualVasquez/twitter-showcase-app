@@ -31,7 +31,7 @@ jobs:
     - name: Run Azure webapp deploy action using publish profile credentials
       uses: azure/webapps-deploy@v2
       with:
-        app-name: twitter-showcase
+        app-name: twitter-showcase-app20210731170901
         slot-name: Production
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0B0AE76C03014DF99AC2FD894E23238E }}
         package: ${{env.DOTNET_ROOT}}/myapp
